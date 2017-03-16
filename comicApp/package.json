@@ -1,0 +1,57 @@
+{
+  "name": "angular-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HumfreeTickle/angularjs.git"
+  },
+  "author": "stephen larkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HumfreeTickle/angularjs/issues"
+  },
+  "homepage": "https://github.com/HumfreeTickle/angularjs#readme",
+  "devDependencies": {
+    "angular": "^1.6.3",
+    "browser-sync": "^2.18.8",
+    "compression": "^1.6.2",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-bump": "^2.7.0",
+    "gulp-csso": "^2.0.0",
+    "gulp-filter": "^5.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-inject": "^4.2.0",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-less": "^3.3.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-print": "^2.0.1",
+    "gulp-rev": "^7.1.2",
+    "gulp-rev-replace": "^0.4.3",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-uglify": "^2.0.1",
+    "gulp-useref": "^3.1.2",
+    "gulp-util": "^3.0.8",
+    "jshint-stylish": "^2.2.1",
+    "lazypipe": "^1.0.1",
+    "lodash": "^4.17.4",
+    "node-notifier": "^5.0.2",
+    "wiredep": "^4.0.0",
+    "yargs": "^7.0.1"
+  }
+}
