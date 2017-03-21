@@ -2,7 +2,7 @@ module.exports = function() {
     var app = './app/';
     var root = './';
     var scripts = app + 'scripts/'
-    var temp = './.tmp/';
+    var temp = app + 'tmp/';
     var wiredep = require('wiredep');
     // var bowerFiles = wiredep({ devDependencies: true })['js'];
 
@@ -17,7 +17,7 @@ module.exports = function() {
             './*.js'
         ],
         build: './build/',
-        css: temp + 'styles.css',
+        css: app + temp + 'styles.css',
         fonts: app + 'fonts/**/*.*',
         htmltemplates: app + '**/*.html',
         index: app + 'index.html',
@@ -27,7 +27,7 @@ module.exports = function() {
             '!' + scripts + '**/*.spec.js'
         ],
         sass: [
-            app + 'styles/styles.scss'
+            app + 'styles/**/*.scss'
         ],
         root: root,
         temp: temp,

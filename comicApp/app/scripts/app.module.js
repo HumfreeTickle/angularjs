@@ -1,7 +1,2 @@
-(function() {
-
-    'use strict';
-
-    angular.module('app', []);
-
-})();
+'use strict';
+var comicApp = angular.module('comicApp', []);

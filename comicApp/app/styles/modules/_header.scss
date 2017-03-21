@@ -1,0 +1,34 @@
+@import 'colours';
+@import 'mixins/header.layout';
+@import 'mixins/shapes';
+$colour: blue;
+.header {
+    z-index: 20;
+    width: 100%;
+    height: 10%;
+    border: solid 2px $header;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    .icon {
+        @include circle(50px, 50px, $colour, 50%);
+        margin: 20px;
+        transition: ease-in 0.4s;
+        &:hover {
+            opacity: 0.4;
+        }
+    }
+    .search {
+        flex: 1;
+        input {
+            width: 20%;
+            height: 40px;
+            border-radius: 8px;
+            text-align: left;
+            padding: 10px;
+            font-size: 16px;
+            color: gray;
+        }
+    }
+}

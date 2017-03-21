@@ -1,0 +1,42 @@
+@import 'mixins/shapes';
+$colour:#cde7f0;
+.content {
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+}
+
+.comicSection,
+.left_gutter,
+.right_gutter {
+    flex: 1 100%;
+}
+
+.comicSection {
+    background: green;
+    flex: 3 0px;
+}
+
+.left_gutter {
+    background: orangered;
+    flex: 0.5 auto;
+}
+
+.right_gutter {
+    background: yellow;
+    flex: 0.5 auto;
+}
+
+.comic {
+    float: left;
+    margin: 20px 35px;
+    @include square(20%, 400px, $colour);
+    transition: ease-in-out 0.4s;
+    &:hover {
+        height: 420px;
+        width: 21%;
+        z-index: 20;
+        margin: 10px 23px;
+    }
+}

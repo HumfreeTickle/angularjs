@@ -65,7 +65,7 @@ gulp.task('inject', ['styles' /*, 'wiredep', 'templatecache' */ ], function() {
 
     return gulp
         .src(config.index)
-        .pipe($.inject(gulp.src(config.css)))
+        .pipe($.inject(gulp.src('.' + config.css)))
         .pipe(gulp.dest(config.app));
 });
 
@@ -209,6 +209,11 @@ gulp.task('clean-code', function() {
     clean(files);
 });
 
+gulp.task('watch', function() {
+    gulp.watch([config.sass], ['styles'])
+        .on('change', function(event) { changeEvent(event); });
+})
+
 //---------------------------------------------------------------------//
 function serve(isDev, specRunner) {
     var nodeOptions = {
@@ -256,10 +261,10 @@ function startBrowserSync(isDev, specRunner) {
     log('Starting browser-sync on port: ' + port);
 
     if (isDev) {
-        gulp.watch([config.less], ['styles'])
+        gulp.watch([config.sass], ['styles'])
             .on('change', function(event) { changeEvent(event); });
     } else {
-        gulp.watch([config.less, config.js, config.htmltemplates], ['optimize', browserSync.reload])
+        gulp.watch([config.sass, config.js, config.htmltemplates], ['optimize', browserSync.reload])
             .on('change', function(event) { changeEvent(event); });
     }
 

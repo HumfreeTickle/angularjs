@@ -1,0 +1,35 @@
+@mixin square($width, $height, $colour) {
+    width: $width;
+    height: $height;
+    background: $colour;
+}
+
+@mixin circle($width, $height, $colour, $r) {
+    width: $width;
+    height: $height;
+    background: $colour;
+    -moz-border-radius: $r;
+    -webkit-border-radius: $r;
+    border-radius: $r;
+}
+
+
+/* Cleaner, but slightly less support: use "50%" as value */
+
+@mixin triangle($top:50px solid transparent, $left:50px solid transparent, $right:50px solid transparent, $bottom:50px solid transparent) {
+    width: 0;
+    height: 0;
+    border-top: $top;
+    border-left: $left;
+    border-right: $right;
+    border-bottom: $bottom;
+}
+
+@mixin right-triangle($top: 100px solid transparent, $left: 100px solid transparent, $right: 100px solid transparent, $bottom: 100px solid transparent) {
+    width: 0;
+    height: 0;
+    border-top: $top;
+    border-left: $left;
+    border-right: $right;
+    border-bottom: $bottom;
+}

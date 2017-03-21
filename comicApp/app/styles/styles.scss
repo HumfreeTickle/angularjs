@@ -1,4 +1,15 @@
-$colour: red;
-body {
-    background: $colour
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font: 100% sans-serif;
+}
+
+@import 'modules/modules';

@@ -1,35 +1,50 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="comicApp">
 
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
-
     <!-- build:css css/app.css-->
     <!-- inject:css -->
-    <link rel="stylesheet" href="/.tmp/styles.css">
+    <link rel="stylesheet" href="./tmp/styles.css">
     <!-- endinject -->
     <!-- endbuild -->
 </head>
 
 <body>
-    <div>
-        <h1 ng-controller="HelloWorldCtrl">{{helloMessage}}</h1>
+    <div ng-controller="comicAppCtrl">
+        <div class="header">
+            <div ng-repeat="n in repeat">
+                <div class="icon"></div>
+            </div>
+            <div class="search">
+                <input type="search" placeholder="search" ng-model="input" />
+            </div>
+        </div>
+        <div class="content">
+            <div class="left_gutter"></div>
+            <div class="comicSection">
+                <div ng-repeat="comic in comics">
+                    <div class="comic">
+                        <h1>{{comic.name}}</h1>
+                        <p>{{comic.description}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right_gutter"></div>
+
+        </div>
     </div>
 
     <!-- build:js js/lib.js-->
-    <!-- bower:js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
 
-    <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js js/app.js-->
     <!-- inject:js -->
-    <script src="/app/scripts/app.module.js"></script>
-    <script type="text/javascript">
-        angular.mdule('app', []).controller('HelloWorldCtrl', function($scope) {
-            $scope.helloMessage = "Hello World";
-        });
-    </script>
+    <script src="./scripts/app.module.js"></script>
+    <script src="./scripts/app.controller.js"></script>
+
     <!-- endinject -->
 
     <!-- inject:templates:js -->
