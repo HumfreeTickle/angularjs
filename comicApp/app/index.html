@@ -16,34 +16,43 @@
                 <div class="icon"></div>
             </div>
             <div class="search">
-                <input type="search" placeholder="search" ng-model="input" />
+                <input type="search" placeholder="search" ng-model="search" />
             </div>
         </div>
         <div class="content">
             <div class="left_gutter"></div>
             <div class="comicSection">
-                <div ng-repeat="comic in comics">
-                    <div class="comic">
-                        <h1>{{comic.name}}</h1>
-                        <p>{{comic.description}}</p>
-                    </div>
+                <div ng-repeat="comic in comics | filter:search ">
+                    <a href="#">
+                        <div class="comic fade" ng-style="{ 'background-image': 'url({{comic.image}})'} ">
+                            <div class="description ">
+                                <h2>{{comic.name}} <br> <span>{{comic.issue}}</span>
+                                </h2>
+                                <!--<p>Lorem ipsum dolor sit amet, erant audiam alienum et quo, sea invidunt constituto ne, cu nemore nusquam vim. Odio honestatis dissentiet eos ex, an est tantas primis doctus. No nec nominavi appellantur signiferumque. Vidisse
+                                    deserunt antiopam at pri, pro modo maluisset ut. Et est error forensibus consectetuer. Per ex appetere perfecto, est ei simul suscipit.
+                                </p>-->
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
 
-            <div class="right_gutter"></div>
+            <div class="right_gutter "></div>
 
         </div>
+        <div class="footer"></div>
     </div>
 
     <!-- build:js js/lib.js-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular-animate.js"></script>
 
     <!-- endbuild -->
 
     <!-- build:js js/app.js-->
     <!-- inject:js -->
-    <script src="./scripts/app.module.js"></script>
-    <script src="./scripts/app.controller.js"></script>
+    <script src="./scripts/app.module.js "></script>
+    <script src="./scripts/app.controller.js "></script>
 
     <!-- endinject -->
 

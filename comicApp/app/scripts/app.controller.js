@@ -6,19 +6,22 @@ comicApp.controller('comicAppCtrl', function ComicAppController($scope) {
     $scope.input;
 
     class Comic {
-        constructor(name, description) {
+        constructor(name, issue, series, image) {
             this.name = name;
-            this.description = description;
+            this.issue = issue;
+            this.series = series;
+            this.image = image;
         }
     }
     $scope.comics = []
+    $scope.names = ['Fantastic Four', 'X-Men', 'Hulk', 'Hulk', 'X-Men', 'Hulk', 'Hulk', 'X-Men', 'Hulk', 'Hulk', 'X-Men', 'Hulk', 'Hulk', 'X-Men', 'Hulk', 'Hulk', 'X-Men', 'Hulk', 'Hulk', 'X-Men', 'Hulk', 'Hulk', 'X-Men', 'Hulk', 'Hulk', 'X-Men', 'Hulk', 'Hulk', 'X-Men', 'Hulk', 'Hulk']
 
     function createComics(amount) {
         for (var i = 1; i <= amount; i++) {
-            var newComic = new Comic('test' + i, 'words' + i * 3);
+            var newComic = new Comic($scope.names[i - 1], "Issue " + i, $scope.names[i - 1], './images/' + i + ".jpg");
             $scope.comics.push(newComic);
         }
     }
 
-    createComics(20);
+    createComics(16);
 });

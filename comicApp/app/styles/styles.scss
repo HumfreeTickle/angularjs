@@ -1,3 +1,4 @@
+@import 'modules/colours';
 *,
 *:before,
 *:after {
@@ -10,6 +11,7 @@ html {
 
 body {
     font: 100% sans-serif;
+    background: $background;
 }
 
 @import 'modules/modules';
