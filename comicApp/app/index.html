@@ -11,35 +11,8 @@
 
 <body>
     <div ng-controller="comicAppCtrl">
-        <div class="header">
-            <div ng-repeat="n in repeat">
-                <div class="icon"></div>
-            </div>
-            <div class="search">
-                <input type="search" placeholder="search" ng-model="search" />
-            </div>
-        </div>
-        <div class="content">
-            <div class="left_gutter"></div>
-            <div class="comicSection">
-                <div ng-repeat="comic in comics | filter:search ">
-                    <a href="#">
-                        <div class="comic fade" ng-style="{ 'background-image': 'url({{comic.image}})'} ">
-                            <div class="description ">
-                                <h2>{{comic.name}} <br> <span>{{comic.issue}}</span>
-                                </h2>
-                                <!--<p>Lorem ipsum dolor sit amet, erant audiam alienum et quo, sea invidunt constituto ne, cu nemore nusquam vim. Odio honestatis dissentiet eos ex, an est tantas primis doctus. No nec nominavi appellantur signiferumque. Vidisse
-                                    deserunt antiopam at pri, pro modo maluisset ut. Et est error forensibus consectetuer. Per ex appetere perfecto, est ei simul suscipit.
-                                </p>-->
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="right_gutter "></div>
-
-        </div>
+        <div ng-include src="'./views/header.html'"></div>
+        <div ng-include src="'./views/content.html'"></div>
         <div class="footer"></div>
     </div>
 

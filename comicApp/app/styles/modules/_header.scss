@@ -10,25 +10,48 @@
     display: flex;
     align-items: center;
     padding: 20px;
+    padding-left: 15%;
     margin-bottom: 50px;
-    .icon {
-        @include circle(50px, 50px, $header, 50%);
-        margin: 20px;
-        transition: ease-in 0.4s;
+}
+
+.icon {
+    @include circle(50px, 50px, $header, 50%);
+    margin: 20px;
+    img {
+        position: relative;
+        width: 30%;
+        height: auto;
+        left: 34%;
+        top: 15%;
+        opacity: 0;
+        transition: opacity 0.4 linear;
         &:hover {
-            opacity: 0.4;
+            opacity: 1;
         }
     }
-    .search {
-        flex: 1;
-        input {
-            width: 20%;
-            height: 40px;
-            border-radius: 8px;
-            text-align: left;
-            padding: 10px;
-            font-size: 16px;
-            color: gray;
-        }
+}
+
+// .links {
+//     display: inline-flex;
+//     font-size: 20px;
+//     a {
+//         display: inline-block;
+//         text-decoration: none;
+//         transition: all 0.2s linear;
+//         border-radius: 4px;
+//         padding: 10px 30px;
+//     }
+// }
+.search {
+    flex: 1;
+    position: relative;
+    input {
+        width: 30%;
+        height: 30px;
+        border-radius: 8px;
+        text-align: left;
+        padding: 10px;
+        font-size: 16px;
+        color: gray;
     }
 }
