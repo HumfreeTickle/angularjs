@@ -7,25 +7,30 @@
     <link rel="stylesheet" href="./tmp/styles.css">
     <!-- endinject -->
     <!-- endbuild -->
+    <base href="/">
 </head>
 
 <body>
     <div ng-controller="comicAppCtrl">
-        <div ng-include src="'./views/header.html'"></div>
-        <div ng-include src="'./views/content.html'"></div>
+        <div ng-view></div>
         <div class="footer"></div>
     </div>
 
     <!-- build:js js/lib.js-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular-animate.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
     <!-- endbuild -->
 
     <!-- build:js js/app.js-->
     <!-- inject:js -->
     <script src="./scripts/app.module.js "></script>
+
     <script src="./scripts/app.controller.js "></script>
+    <script src="./scripts/about.controller.js "></script>
+    <script src="./scripts/comicbook.controller.js "></script>
+
+    <script src="./scripts/app.config.js "></script>
 
     <!-- endinject -->
 

@@ -1,0 +1,21 @@
+@import 'mixins/shapes';
+@import 'colours';
+@import 'mixins/background-image';
+$circle: 70px;
+.backBtn {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 10px;
+}
+
+.circle {
+    @include circle($circle, $circle, white, 100px);
+    @include background-img('../images/back_icon.png');
+    opacity: 0.1;
+    transition: opacity 0.4s ease-in-out;
+    &:hover {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+}

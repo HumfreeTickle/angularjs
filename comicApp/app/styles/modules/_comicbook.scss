@@ -1,0 +1,44 @@
+@import 'colours';
+.comicbook {
+    position: absolute;
+    left: 35%;
+    top: 5%;
+    img {
+        width: 600px;
+        max-width: 800px;
+        max-height: 1000px;
+        height: 100%;
+    }
+    .next,
+    .previous {
+        position: absolute;
+        height: 100%;
+        width: 100px;
+        margin: 0 20px;
+        background: $navigation;
+        opacity: 0.1;
+        transition: opacity 0.4s ease-in-out;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .next {
+        top: 0;
+        right: -125px;
+    }
+    .page {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 600px;
+        max-width: 800px;
+        max-height: 1000px;
+        height: 100pc;
+    }
+    .previous {
+        top: 0;
+        left: -125px;
+    }
+}
+
+// TODO make the page and navigation responsive

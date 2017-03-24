@@ -1,2 +1,2 @@
 'use strict';
-var comicApp = angular.module('comicApp', []);
+var comicApp = angular.module('comicApp', ["ngRoute"]);;

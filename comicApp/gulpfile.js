@@ -82,7 +82,7 @@ gulp.task('build', ['optimize', 'images', 'fonts'], function() {
     notify(msg);
 });
 
-gulp.task('optimize', ['inject', 'test'], function() {
+gulp.task('optimize', ['inject'], function() {
     log('Optimizing the javascript, css, html ... ');
     var lazypipe = require('lazypipe');
     var assets = $.useref({ searchPath: './' });
