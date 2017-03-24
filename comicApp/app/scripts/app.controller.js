@@ -28,7 +28,7 @@ comicApp.controller('comicAppCtrl', function ComicAppController($scope, $route, 
         return function(scope, element, attrs) {
 
             angular.element($window).bind("scroll", function() {
-                if (this.pageYOffset >= 20) {
+                if (this.pageYOffset >= 40) {
                     scope.scrolling = true;
                 } else {
                     scope.scrolling = false;

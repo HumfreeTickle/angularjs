@@ -9,6 +9,9 @@
         max-height: 1000px;
         height: 100%;
     }
+    @media (max-width:1000px) {
+        left: 10%;
+    }
     .next,
     .previous {
         position: absolute;
@@ -32,8 +35,13 @@
         background-position: center center;
         width: 600px;
         max-width: 800px;
-        max-height: 1000px;
         height: 100pc;
+        @media (max-width: 1000px) {
+            width: 100pc;
+        }
+        @media (min-width: 1001px) {
+            max-height: 1000px;
+        }
     }
     .previous {
         top: 0;
