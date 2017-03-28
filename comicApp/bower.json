@@ -1,0 +1,22 @@
+{
+    "name": "comicbook-app",
+    "description": "It's a comicbook app",
+    "authors": [
+        "stephen larkin"
+    ],
+    "license": "ISC",
+    "homepage": "https://github.com/HumfreeTickle/angularjs",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "~2.1.1",
+        "angular": "~1.3.8",
+        "angular-animate": "~1.3.8",
+        "angular-route": "~1.6.4"
+    }
+}

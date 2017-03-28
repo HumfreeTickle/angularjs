@@ -1,10 +1,12 @@
 module.exports = function() {
-    var app = './app/';
+    var src = './src/';
+    var app = src + 'app/';
     var root = './';
-    var scripts = app + 'scripts/'
-    var temp = app + 'tmp/';
+    var scripts = app + 'scripts/';
+    var server = src + 'server/app.js';
+    var temp = './.tmp/';
     var wiredep = require('wiredep');
-    // var bowerFiles = wiredep({ devDependencies: true })['js'];
+    var bowerFiles = wiredep({ devDependencies: true })['js'];
 
     var config = {
 
@@ -12,24 +14,23 @@ module.exports = function() {
          * File Paths
          */
         app: app,
-        alljs: [
-            './app/**/*.js',
-            './*.js'
-        ],
         build: './build/',
-        css: app + temp + 'styles.css',
+        css: temp + 'styles.css',
         fonts: app + 'fonts/**/*.*',
         htmltemplates: app + '**/*.html',
         index: app + 'index.html',
         images: app + 'images/**/*.*',
-        js: [scripts + '**/*.module.js',
+        js: [
+            scripts + '**/*.module.js',
             scripts + '**/*.js',
-            '!' + scripts + '**/*.spec.js'
+            // '!' + scripts + '**/*.spec.js'
         ],
         sass: [
             app + 'styles/**/*.scss'
         ],
+        source: src,
         root: root,
+        server: server,
         temp: temp,
 
         /**
@@ -46,7 +47,7 @@ module.exports = function() {
         templateCache: {
             file: 'templates.js',
             options: {
-                module: 'app.core',
+                module: 'comicApp.core',
                 standAlone: false,
                 root: 'app/'
             }
@@ -60,11 +61,11 @@ module.exports = function() {
         /**
          * Bower and NPM locations
          */
-        // bower: {
-        //     json: require('./bower.json'),
-        //     directory: './bower_components/',
-        //     ignorePath: '../..'
-        // },
+        bower: {
+            json: require('./bower.json'),
+            directory: './bower_components/',
+            ignorePath: '../..'
+        },
 
         /**
          * Version Updating
@@ -72,14 +73,21 @@ module.exports = function() {
 
         packages: [
             './package.json',
+            './bower.json'
         ],
+
+        /**
+         * Node settings
+         */
+        nodeServer: './src/server/app.js',
+        defaultPort: '7203'
     };
 
     config.getWiredDefaultOptions = function() {
         var options = {
-            // bowerJson: config.bower.json,
-            // directory: config.bower.directory,
-            // ignorePath: config.bower.ignorePath
+            bowerJson: config.bower.json,
+            directory: config.bower.directory,
+            ignorePath: config.bower.ignorePath
         };
         return options;
     };

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="comicApp">
+
+<head>
+    <!-- build:css css/app.css-->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/.tmp/styles.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+    <base href="/">
+</head>
+
+<body>
+    <div class="comicBookCtrl">
+        <div ng-view></div>
+    </div>
+
+    <!-- build:js js/lib.js-->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js js/app.js-->
+    <!-- inject:js -->
+    <script src="/src/app/scripts/about.module.js"></script>
+    <script src="/src/app/scripts/app.module.js"></script>
+    <script src="/src/app/scripts/comicbook.module.js"></script>
+    <script src="/src/app/scripts/home.module.js"></script>
+    <script src="/src/app/scripts/app.config.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:templates:js -->
+    <!-- endinject -->
+
+    <!-- endbuild -->
+</body>
+
+</html>

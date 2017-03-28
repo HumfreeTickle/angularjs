@@ -60,12 +60,12 @@ gulp.task('serve-dev', ['inject'], function() {
     serve(true /* isDev*/ );
 });
 
-gulp.task('inject', ['styles' /*, 'wiredep', 'templatecache' */ ], function() {
+gulp.task('inject', ['styles', 'wiredep', 'templatecache'], function() {
     log('Injecting custom css into html ');
 
     return gulp
         .src(config.index)
-        .pipe($.inject(gulp.src('.' + config.css)))
+        .pipe($.inject(gulp.src(config.css)))
         .pipe(gulp.dest(config.app));
 });
 
@@ -77,7 +77,7 @@ gulp.task('build', ['optimize', 'images', 'fonts'], function() {
         subtitle: 'Deployed to the build folder',
         message: 'Running `gulp serve-build`'
     };
-    del(config.temp);
+    // del(config.temp);
     log(msg);
     notify(msg);
 });
@@ -104,7 +104,6 @@ gulp.task('optimize', ['inject'], function() {
             }))
         // Apply the concat and file replacement with useref
         .pipe(assets, lazypipe().pipe($.sourcemaps.init, { loadMaps: true }))
-        // Get the css
         .pipe(cssFilter)
         .pipe($.csso())
         .pipe(cssFilter.restore)
@@ -181,7 +180,7 @@ gulp.task('wiredep', function() {
         .src(config.index)
         .pipe(wiredep(options))
         .pipe($.inject(gulp.src(config.js)))
-        .pipe(gulp.dest(config.client));
+        .pipe(gulp.dest(config.app));
 });
 
 
@@ -212,7 +211,7 @@ gulp.task('clean-code', function() {
 gulp.task('watch', function() {
     gulp.watch([config.sass], ['styles'])
         .on('change', function(event) { changeEvent(event); });
-})
+});
 
 //---------------------------------------------------------------------//
 function serve(isDev, specRunner) {
@@ -220,7 +219,7 @@ function serve(isDev, specRunner) {
         script: config.nodeServer,
         delayTime: 1,
         env: {
-            'PORT': port,
+            'PORT': config.defaultPort,
             'NODE_ENV': isDev ? 'dev' : 'build'
         },
         watch: [config.server]
@@ -237,7 +236,7 @@ function serve(isDev, specRunner) {
         })
         .on('start', function() {
             log('*** nodemon started ***');
-            startBrowserSync(isDev, specRunner);
+            startBrowserSync(isDev);
         })
         .on('crash', function() {
             log('*** nodemon crashed: script crashed for some undetermined reason ***');
@@ -253,12 +252,13 @@ function changeEvent(event) {
     log('File ' + event.path.replace(srcPattern, '') + ' ' + event.type);
 }
 
-function startBrowserSync(isDev, specRunner) {
+function startBrowserSync(isDev) {
     if (args.nosync || browserSync.active) {
+        console.log('BrowserSync already running...');
         return;
     }
 
-    log('Starting browser-sync on port: ' + port);
+    log('Starting browser-sync on port: ' + config.defaultPort);
 
     if (isDev) {
         gulp.watch([config.sass], ['styles'])
@@ -269,30 +269,15 @@ function startBrowserSync(isDev, specRunner) {
     }
 
     var options = {
-        proxy: 'localhost:' + port,
+        proxy: 'localhost:' + config.defaultPort,
         port: 3000,
         files: isDev ? [
-            config.client + '**/*.*',
-            '!' + config.less,
+            config.app + '**/*.*',
+            '!' + config.sass,
             config.temp + '**/*.css'
         ] : [],
-        ghostMode: {
-            clicks: true,
-            location: false,
-            forms: true,
-            scroll: true
-        },
-        injectChanges: true,
-        logFileChanges: true,
-        logLevel: 'debug',
-        logPrefix: 'gulp-patterns',
-        notify: true,
-        reloadDelay: 1000
+        reloadDelay: config.browserReloadDelay
     };
-
-    if (specRunner) {
-        options.startPath = config.specRunnerFile;
-    }
 
     browserSync(options);
 }

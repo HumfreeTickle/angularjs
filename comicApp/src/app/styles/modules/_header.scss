@@ -1,0 +1,61 @@
+@import 'colours';
+@import 'mixins/header.layout';
+@import 'mixins/shapes';
+@import 'mixins/background-image';
+.header {
+    z-index: 20;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.scroll {
+    transition: all 0.2s linear;
+    position: fixed;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.icon {
+    @include circle(70px, 70px, white, 100px);
+    @include background-img('../images/person.png', 60%);
+    margin: 10px;
+    transition: all 150ms linear;
+    &:hover {
+        opacity: 0.4;
+        transform: scale(0.98);
+    }
+}
+
+.links {
+    display: inline-flex;
+    font-size: 20px;
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        transition: all 0.2s linear;
+        border-radius: 4px;
+        padding: 10px 10px;
+    }
+}
+
+.search {
+    position: absolute;
+    left: 100px;
+    input {
+        width: 100%;
+        height: 15px;
+        border-radius: 20px;
+        text-align: left;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: gray;
+    }
+}
