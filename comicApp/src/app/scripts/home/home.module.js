@@ -1,13 +1,12 @@
 (function() {
     'use strict';
-
-    var comicApp = angular
+    var home_page = angular
         .module('comicApp.homePage', ['ngRoute'])
         .controller('homepageCtrl', ComicAppController)
         .directive('scroll', scrollDirective);
 
     ComicAppController.$inject = ['$scope', '$route', '$routeParams'];
-
+    /* @ngInject */
     function ComicAppController($scope, $route, $routeParams) {
         $scope.comics = [];
         $scope.names = ['Fantastic Four', 'X-Men', 'Hulk', 'Spider-Man', 'Batman'];
@@ -30,6 +29,8 @@
         createComics();
     }
 
+    scrollDirective.$inject = ['$window'];
+    /* @ngInject */
     function scrollDirective($window) {
         return function(scope, element, attrs) {
 
@@ -43,4 +44,5 @@
             });
         };
     }
+
 })();

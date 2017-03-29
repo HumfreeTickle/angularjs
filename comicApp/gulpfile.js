@@ -54,6 +54,7 @@ gulp.task('images', ['clean-images'], function() {
 // -- Dev/ Build Tasks -- //
 
 gulp.task('serve-build', ['build'], function() {
+    // TODO stop build from constantly calling itself
     serve(false /* isDev*/ );
 });
 gulp.task('serve-dev', ['inject'], function() {

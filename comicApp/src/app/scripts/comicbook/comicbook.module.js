@@ -11,13 +11,13 @@
     // - when the image is clicked a call is sent to the server
     // - name of series and issue number
     // - this is then sent back in the correct order so the user can read the book
-    angular
+    var comicbook = angular
         .module('comicApp.comicPage', [])
         .controller('comicpageCtrl', ComicAppController)
         .run(appRun);
 
     ComicAppController.$inject = ['$scope', '$routeParams', '$http'];
-
+    /* @ngInject */
     function ComicAppController($scope, $routeParams, $http) {
         $scope.params = $routeParams;
         $scope.currentPage = 0;
@@ -67,6 +67,8 @@
 
     }
 
+    appRun.$inject = ['$rootScope'];
+    /* @ngInject */
     function appRun($rootScope) {
 
         $(document).keyup(function(event) {
@@ -81,7 +83,5 @@
             }
         });
     }
-})();
 
-// TODO
-// :series/issue/:number
+})();
