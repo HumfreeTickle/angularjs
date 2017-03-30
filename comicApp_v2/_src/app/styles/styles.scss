@@ -1,0 +1,25 @@
+@import 'modules/colours';
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 100% sans-serif;
+    background: $background;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+@import 'modules/modules';

@@ -1,0 +1,19 @@
+<div ng-include src="'./views/header.html'"></div>
+<div class="content">
+    <div class="left_gutter"></div>
+    <div class="comicSection">
+        <div ng-repeat="comic in comics | filter:search">
+            <a href="{{comic.refName}}/issue/{{comic.refIssue}}">
+                <div class="comic fade" ng-style="{ 'background-image': 'url({{comic.image}})'} ">
+                    <div class="description ">
+                        <h2>{{comic.name}} <br> <span>{{comic.issue}}</span>
+                        </h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="right_gutter "></div>
+</div>
+<div class="footer"></div>

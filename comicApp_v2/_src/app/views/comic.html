@@ -1,0 +1,7 @@
+<div ng-include="'./views/back.html'"></div>
+<div class="comicbook" ng-keydown="key($event)">
+    <div class='previous' ng-click="changePageLeft()"></div>
+    <div class='page' style="background-image:url('{{page}}')"></div>
+    <div class='next' ng-click="changePageRight()"></div>
+</div>
+<div class="footer"></div>

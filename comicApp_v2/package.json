@@ -1,22 +1,42 @@
 {
-  "name": "comicapp_v2",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HumfreeTickle/angularjs.git"
-  },
-  "author": "stephen larkin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/HumfreeTickle/angularjs/issues"
-  },
-  "homepage": "https://github.com/HumfreeTickle/angularjs#readme",
-  "devDependencies": {
-    "angular2": "^2.0.0-beta.21"
-  }
+    "name": "comicapp_v2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/HumfreeTickle/angularjs.git"
+    },
+    "author": "stephen larkin",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/HumfreeTickle/angularjs/issues"
+    },
+    "homepage": "https://github.com/HumfreeTickle/angularjs#readme",
+    "dependencies": {
+        "@angular/common": "~4.0.0",
+        "@angular/compiler": "~4.0.0",
+        "@angular/core": "~4.0.0",
+        "@angular/forms": "~4.0.0",
+        "@angular/http": "~4.0.0",
+        "@angular/platform-browser": "~4.0.0",
+        "@angular/platform-browser-dynamic": "~4.0.0",
+        "@angular/router": "~4.0.0",
+
+        "angular-in-memory-web-api": "~0.3.0",
+        "systemjs": "0.19.40",
+        "core-js": "^2.4.1",
+        "rxjs": "5.0.1",
+        "zone.js": "^0.8.4"
+    },
+    "devDependencies": {
+        "concurrently": "^2.0.0",
+        "lite-server": "^2.2.0",
+        "typescript": "^1.8.10",
+        "typings": "^0.8.1",
+        "@types/node": "^6.0.46"
+    }
 }

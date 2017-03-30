@@ -1,0 +1,98 @@
+@import 'mixins/shapes';
+@import 'mixins/fade';
+@import 'colours';
+.content {
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+
+.comicSection,
+.left_gutter,
+.right_gutter {
+    flex: 1 100%;
+}
+
+.comicSection {
+    background: $body_clr;
+    flex: 2 auto;
+}
+
+.left_gutter {
+    background: $gutter;
+    flex: 0.5 auto;
+}
+
+.right_gutter {
+    background: $gutter;
+    flex: 0.5 auto;
+}
+
+.comic {
+    float: left;
+    margin: 20px 35px;
+    @include square(270px, 440px, $comic_default);
+    min-width: 200px;
+    background: lighten($comic_default, 3%);
+    border: 1px solid darken($comic_default, 4%);
+    box-shadow: 0px 2px 0 darken($comic_default, 5%), 2px 4px 6px darken($comic_default, 2%);
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: all 150ms linear;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
+    &:hover {
+        transform: scale(0.98);
+        background: darken($comic_default, 1.5%);
+        box-shadow: 1px 1px 2px rgba(#fff, .2);
+        text-decoration: none;
+        text-shadow: -1px -1px 0 darken($comic_default, 9.5%);
+        transition: all 250ms linear;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border: solid 4px red;
+        .description {
+            background: $comic_default;
+            opacity: 1;
+            height: 20%;
+            width: 100%;
+            max-height: 100%;
+        }
+    }
+    .description {
+        opacity: 0;
+        position: absolute;
+        bottom: 0;
+        transition: opacity 0.4s ease-in-out;
+        margin: 0;
+        padding-top: 15px;
+        span {
+            font-size: 12px;
+        }
+    }
+}
+
+@media (max-width:1000px) {
+    .left_gutter,
+    .right_gutter {
+        display: none;
+    }
+    .comicSection {
+        background: $gutter;
+        position: absolute;
+    }
+    .comic {
+        float: left;
+        width: 400px;
+        height: 650px;
+    }
+}
+
+// TODO 
+// Fully centre content
