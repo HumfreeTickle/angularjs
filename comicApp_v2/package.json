@@ -1,0 +1,22 @@
+{
+  "name": "comicapp_v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HumfreeTickle/angularjs.git"
+  },
+  "author": "stephen larkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HumfreeTickle/angularjs/issues"
+  },
+  "homepage": "https://github.com/HumfreeTickle/angularjs#readme",
+  "devDependencies": {
+    "angular2": "^2.0.0-beta.21"
+  }
+}
