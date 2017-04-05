@@ -1,12 +1,12 @@
-<div ng-include src="'./views/header.html'"></div>
 <div class="content">
     <div class="left_gutter"></div>
     <div class="comicSection">
-        <div ng-repeat="comic in comics | filter:search">
+        <div *ngFor="let comic of comics;">
             <a href="{{comic.refName}}/issue/{{comic.refIssue}}">
-                <div class="comic fade" ng-style="{ 'background-image': 'url({{comic.image}})'} ">
+                <div class="comic fade" [ngStyle]="{ 'background-image': 'url(' + comic.Image + ')'}">
+
                     <div class="description ">
-                        <h2>{{comic.name}} <br> <span>{{comic.issue}}</span>
+                        <h2>{{comic.Name}} <br> <span>{{comic.Issue}}</span>
                         </h2>
                     </div>
                 </div>

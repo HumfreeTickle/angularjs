@@ -1,4 +1,4 @@
-@import "mixins/background-image";
+@import "background-image";
 .about {
     display: flex;
     flex-direction: row;
@@ -27,7 +27,7 @@
 }
 
 .hero_img {
-    @include background-img('../images/superhero.png', 100%);
+    @include background-img('../app/images/superhero.png', 100%);
     @media (max-width: 900px) {
         background-size: cover;
         opacity: 0.4;

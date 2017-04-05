@@ -1,8 +1,9 @@
 <div class="header" scroll ng-class="{scroll:scrolling}">
-    <a href="about">
+    <a routerLink="/about">
         <div class="icon"></div>
     </a>
     <div class="search">
         <input type="search" placeholder="Search..." ng-model="$parent.search" />
     </div>
 </div>
+<router-outlet></router-outlet>

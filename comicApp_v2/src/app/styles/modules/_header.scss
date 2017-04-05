@@ -1,7 +1,6 @@
-@import 'colours';
-@import 'mixins/header.layout';
-@import 'mixins/shapes';
-@import 'mixins/background-image';
+@import "colours";
+@import "shapes";
+@import "background-image";
 .header {
     z-index: 20;
     display: flex;

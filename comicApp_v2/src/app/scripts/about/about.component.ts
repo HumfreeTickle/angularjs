@@ -1,11 +1,13 @@
 import { Component , OnInit } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+    moduleId: module.id,
+    selector: 'about-page',
+    templateUrl: '/app/views/about.html'
 })
 export class AboutComponent  implements OnInit {
-    name:string = 'About Page';
+    title: string = 'Comic App - About';
+
     constructor() { }
 
     ngOnInit() {  
